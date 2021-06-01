@@ -1,1 +1,2 @@
-"# anime_euphoria" 
+# anime_euphoria
+
