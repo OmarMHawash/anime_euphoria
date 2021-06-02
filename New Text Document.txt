@@ -1,2 +1,0 @@
-git_pull.bat
-git_pull_push.bat

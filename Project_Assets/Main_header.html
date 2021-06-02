@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+
+        header {
+        width: 100%;
+        height: 70px;
+        background-image: linear-gradient(white, rgb(215, 194, 177));
+        border-radius: 5px;
+        box-shadow: 5px 5px 8px #888888;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        }
+        header img,
+        .card img {
+        width: 140px;
+        height: 70px;
+        border-radius: 2px;
+        }
+
+        header ul {
+        display: flex;
+        list-style: none;
+        }
+
+        header li,
+        header a {
+        padding: 20px 10px 20px 10px;
+        font-size: 25px;
+        text-decoration: none;
+        color: rgba(223, 104, 13, 0.9);
+        }
+
+        header input {
+        width: 180px;
+        height: 35px;
+        border-radius: 15px;
+        margin-top: 17.5px;
+        margin-right:10px ;
+        }
+
+        header button {
+        width: 20px;
+        height: 20px;
+        margin-left:-35px ;
+        border-radius: 10px;
+        border: 0px;
+        background-color: white;
+        }
+        form{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./A_E_1.png" alt="website-logo">
+        <ul>
+          <li><a href=""> Home</a></li>
+          <li><a href=""> Trending</a></li>
+          <li><a href=""> My Page</a></li>
+          <li><a href=""> Categories</a></li>
+        </ul>
+        
+    <form action="#" method="POST" >
+        <div class="search-box">
+          <input type="text" placeholder="  search by name" />
+          <button class="btn">></button>
+        </div>
+    </form>
+    </header>
+</body>
+</html>
