@@ -20,5 +20,4 @@ from django.urls.conf import include
 urlpatterns = [
     path('', include("usersapp.urls")),
     path('home', include("animeapp.urls")),
-    
 ]
