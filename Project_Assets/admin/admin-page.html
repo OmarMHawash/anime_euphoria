@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-3d'
+        });
+    </script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            
+        }
+        body{
+            background-image: url("/bg_img_1.jpg");
+        }
+        main {
+            /* background-image: url("img\(11\).jpg"); */
+            width: 100%;
+            height: fit-content;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-image: linear-gradient(white, rgb(99, 164, 238));
+            border-radius: 5px;
+            box-shadow: 5px 5px 8px #888888d7;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        header img,
+        .card img {
+            width: 140px;
+            height: 70px;
+            border-radius: 2px;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+            /* margin-right: 50%; */
+        }
+
+        header li,
+        header a {
+            padding: 20px 10px 20px 10px;
+            font-size: 25px;
+            text-decoration: none;
+            color: rgba(6, 44, 61, 0.9);
+        }
+
+        header input {
+            width: 180px;
+            height: 35px;
+            border-radius: 15px;
+            margin-top: 17.5px;
+            margin-right: 10px;
+        }
+
+        header button {
+            width: 20px;
+            height: 20px;
+            margin-left: -45px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 0px;
+            background-color: white;
+        }
+
+        form {
+            margin-right: 10%;
+            border-radius: 0.5px;
+        }
+
+        .admin {
+            width: 70%;
+            margin-left: 20%;
+        }
+
+        .datepicker {
+            margin-left: 30%;
+        }
+
+        h3 {
+            text-align: center;
+            margin-left: 10%;
+        }
+    </style>
+    <title>Admin</title>
+</head>
+
+<body>
+    
+    <main>
+        <!-- <img src="img(11).jpg" alt="bg_img"> -->
+        <header>
+            <img src="./A_E_1.png" alt="website-logo">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Trending</a></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="">Categories</a></li>
+            </ul>
+            <form action="#" method="POST">
+                <div class="search-box">
+                    <input type="text" placeholder="  search by name" />
+                    <button class="btn">></button>
+                </div>
+            </form>
+        </header>
+        <h3>Add A New Anime</h3>
+        <form class="admin">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" id="Title" aria-describedby="titleHelp"
+                    placeholder="Enter Anime Title">
+            </div>
+            <div class="form-group">
+                <label for="FormControlSelect1">Select Category</label>
+                <select class="form-control" id="FormSelect1">
+                    <option>Comedy</option>
+                    <option>Action</option>
+                    <option>Thriller</option>
+                    <option>Romance</option>
+                    <option>Sci-fi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="FormTextarea1">Description</label>
+                <textarea class="form-control" id="FormTextarea1" rows="3"></textarea>
+            </div>
+            <div class="input-group date" data-provide="datepicker">
+                <label for="datepicker">Release Date</label>
+                <div class="input-group-addon">
+                    <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+            <label for="basic-url">Poster URL</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">https://</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <label for="basic-ur2">Poster Trailer</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">https://</span>
+                </div>
+                <input type="text" class="form-control" id="basic-ur2" aria-describedby="basic-addon3">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="footer">
+        </div>
+        <footer>
+
+        </footer>
+    </main>
+</body>
+
+</html>
