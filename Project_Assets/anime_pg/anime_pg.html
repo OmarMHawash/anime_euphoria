@@ -11,12 +11,112 @@
             padding: 0;
             margin: 0;
         }
-
+        
         body {
             background-image: url("bg_img_1.jpg");
             font-family: 'Courier New', Courier, monospace;
         }
+    
+      @media only screen and (min-width: 820px) {
+        .cont{
+        margin-top:40px ;
+        width: 92%;
+        /* background-color: #141616; */
+        padding: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        overflow: auto;
+        }
+        header img{
+            width: 140px;
+            height: 80px;
+        }
+        header a{
+            font-size: 28px;
+        }
+        .side-list{
+        width: 20%;
+        float: right;
+        }
+      }
+      @media only screen and (max-width: 821px) {
+        header img{
+        display: none;
+        }
+        form{
+            display: none;
+        }
+        header ul{
+            margin: auto;
+        }
+        header a{
+            font-size: 32px;
+        }
+        .side-list{
+          width: 80%;
+        }
+      }
+      body {
+        background-image: url(./bg_img_3.jpg);
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      header {
+        width: 100%;
+        height: 80px;
+        /* background-image: linear-gradient(#21ccb5, rgb(168, 187, 187)); */
+        /* background-color: #212121; */
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px #383333;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        position: relative;
+        margin-top:0px ;
+      }
 
+      header ul {
+        display: flex;
+        list-style: none;
+      }
+
+      header li,
+      header a {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        padding: 20px 10px 20px 10px;
+        text-decoration: none;
+        color: #65649c;
+      }
+
+      header input {
+        width: 180px;
+        height: 35px;
+        border-radius: 15px;
+        margin-top: 22.5px;
+        margin-right: 10px;
+      }
+
+      header button {
+        width: 20px;
+        height: 20px;
+        margin-left: -45px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 0px;
+        background-color: white;
+      }
+      header form {
+        margin-right: 10px;
+      }
+      .back-color{
+        position: absolute;
+        background-color: #383333;
+        opacity: 0.6;
+        width: 100%;
+        height: 80px;
+        margin-top:0px ;
+      }
         section {
             display: flex;
             justify-content: space-between;
@@ -83,11 +183,12 @@
 
         .container iframe {
             height: 600px;
-            width: 500%;
+            width: 100%;
         }
 
         .container {
-            margin: 1%;
+            margin: auto;
+            width: 95%;
         }
         .discussion{
             display: flex;
@@ -121,7 +222,24 @@
 </head>
 
 <body>
-    <!-- header -->
+    <div class="back-color"></div>
+    <header>
+      <img src="./header_logo.png" alt="website-logo" />
+      <ul>
+        <li><a class="text-decoration-none" href=""> Home</a></li>
+        <li><a class="text-decoration-none" href=""> Trending</a></li>
+        <li><a class="text-decoration-none" href=""> Profile</a></li>
+        <li><a class="text-decoration-none" href=""> Categories</a></li>
+      </ul>
+
+      <form action="#" method="POST">
+        <div class="search-box">
+          <input type="text" placeholder="  search by name" />
+          <button class="btn">></button>
+        
+      </form>
+    </header>
+
     <section>
         <div class="container">
             <iframe width="962" height="541" src="https://www.youtube.com/embed/7aMOurgDB-o"

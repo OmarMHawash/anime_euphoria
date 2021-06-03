@@ -7,11 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
 
     <script>
         $('.datepicker').datepicker({
@@ -23,59 +19,94 @@
         * {
         margin: 0;
         padding: 0;
+    }
+        @media only screen and (min-width: 820px) {
+        
+        img{
+            width: 140px;
+            height: 80px;
+        }
+        header a{
+            font-size: 28px;
         }
 
-        header {
+      }
+      @media only screen and (max-width: 821px) {
+        header img,
+        .card img {
+        display: none;
+        }
+        header form{
+            display: none;
+        }
+        header ul{
+            margin: auto;
+        }
+        header a{
+            font-size: 32px;
+        }
+
+      }
+      body {
+        background-image: url(./bg_img_3.jpg);
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      header {
         width: 100%;
-        height: 70px;
-        background-image: linear-gradient(#21ccb5, rgb(168, 187, 187));
+        height: 80px;
+        /* background-image: linear-gradient(#21ccb5, rgb(168, 187, 187)); */
+        /* background-color: #212121; */
         border-radius: 5px;
-        box-shadow: 5px 5px 8px #888888;
+        box-shadow: 2px 2px 4px #383333;
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
-        }
-        header img,
-        .card img {
-        width: 140px;
-        height: 70px;
-        border-radius: 2px;
-        }
+        position: relative;
+        margin-top:0px ;
+      }
 
-        header ul {
+      header ul {
         display: flex;
         list-style: none;
-        }
+      }
 
-        header li,
-        header a {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      header li,
+      header a {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         padding: 20px 10px 20px 10px;
-        font-size: 28px;
         text-decoration: none;
-        color: rgba(223, 104, 13, 0.9);
-        }
+        color: #65649c;
+      }
 
-        header input {
+      header input {
         width: 180px;
         height: 35px;
         border-radius: 15px;
-        margin-top: 17.5px;
-        margin-right:10px ;
-        }
+        margin-top: 22.5px;
+        margin-right: 10px;
+      }
 
-        header button {
+      header button {
         width: 20px;
         height: 20px;
-        margin-left:-45px ;
+        margin-left: -45px;
         margin-bottom: 20px;
         border-radius: 10px;
         border: 0px;
         background-color: white;
-        }
-        form{
-            margin-right: 10px;
-        }
+      }
+      header form {
+        margin-right: 10px;
+      }
+      .back-color{
+        position: absolute;
+        background-color: #383333;
+        opacity: 0.6;
+        width: 100%;
+        height: 80px;
+        margin-top:0px ;
+      }
 
         .admin {
             width: 70%;
@@ -99,6 +130,7 @@
     
     <main>
         <!-- <img src="img(11).jpg" alt="bg_img"> -->
+        <div class="back-color"></div>
         <header>
             <img src="./header_logo.png" alt="website-logo">
             <ul>
