@@ -83,6 +83,7 @@
         background: #191919;
         text-align: center;
         transition: 0.25s;
+        animation: bounce 1.5s infinite;
       }
 
       .box input[type="text"],
@@ -130,6 +131,13 @@
 
       .box input[type="submit"]:hover {
         background: #2ecc71;
+      }
+      @keyframes bounce {
+      0% {
+        tranform: translate(0, 10px);
+      }
+      50% {
+        transform: translate(0, 10px);
       }
     </style>
   </head>
