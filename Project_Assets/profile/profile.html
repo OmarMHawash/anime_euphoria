@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#edit_button").click(function(){
+        $("#editinfo").toggle();
+        });
+    });
+    </script>
+    <style>
+        * {
+        margin: 0 auto;
+        padding: 0;
+        color:grey;
+        text-align: center;
+        }
+        @media only screen and (min-width: 1020px) {
+            .titles{
+                margin: 50px 10%;
+                display: flex;
+            }
+            .titles > article {
+                justify-content: space-around;
+                margin: 5% auto auto auto; 
+                border-radius: 5px;
+                height: 300px;
+            }
+            
+        }
+        body{
+            background-color: #212121;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            background-image: linear-gradient(#21ccb5, rgb(168, 187, 187));
+            border-radius: 5px;
+            box-shadow: 5px 5px 8px #888888;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            }
+            .header img,
+            .card img {
+            width: 140px;
+            height: 70px;
+            border-radius: 2px;
+            }
+
+            .header ul {
+            display: flex;
+            list-style: none;
+            }
+
+            .header li,
+            .header a {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px 10px 20px 10px;
+            font-size: 28px;
+            text-decoration: none;
+            color: rgba(223, 104, 13, 0.9);
+            }
+
+            .header input {
+            width: 180px;
+            height: 35px;
+            border-radius: 15px;
+            margin-top: 17.5px;
+            margin-right:10px ;
+            }
+
+            .header button {
+            width: 20px;
+            height: 20px;
+            margin-left:-45px ;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 0px;
+            background-color: white;
+            }
+            form{
+                margin-right: 10px;
+            }
+        main{
+            display: flex;
+        }
+        .profilepic{
+            margin: auto auto;
+            border: 1px solid grey;
+            height: 100px;
+            width: 100px;
+        }
+        #editinfo{
+            display: none;
+        }
+        .usernameinfo{
+            width: 30%;
+            min-width: 100px;
+            text-align: center;
+            height: max-content;
+        }
+        .latestcomments{
+            border:1px solid grey ;
+            border-radius: 10px;
+            max-width: 60%;
+            min-width: 30%;
+            max-height: 10cm;
+            padding: 15px;
+            overflow-y: scroll;
+        }
+        .latestcomments>h3{
+            text-align: center;
+        }
+        .main{
+            max-height: 600px;
+        }
+        input{
+            text-align: center;
+        }
+        .titles{
+                margin: 50px 10%;
+                /* display: flex; */
+            }
+            .titles > article {
+                justify-content: space-around;
+                margin: 5% auto auto auto; 
+                border-radius: 5px;
+                height: 300px;
+            }
+            .titles > article > img{
+                justify-content: space-around;
+                margin: 0 auto;
+                border-radius: 5px;
+                border: 1px solid black;
+                height: 300px;
+            }
+        .favouritelists{
+            text-align: left;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body>
+        <header class="header">
+            <img src="./header_logo.png" alt="website-logo">
+            <ul>
+                <li><a href=""> Home</a></li>
+                <li><a href=""> Trending</a></li>
+                <li><a href=""> Profile</a></li>
+                <li><a href=""> Categories</a></li>
+            </ul>
+            <form action="#" method="POST" >
+                <div class="search-box">
+                    <input type="text" placeholder="  search by name" />
+                    <button class="btn">></button>
+                </div>
+            </form>
+        </header><br><br>
+    <main>
+        <article class="usernameinfo">
+            <div class="profilepic">
+            </div>
+            <p>username</p><br><br>
+            <input type="submit" value="Edit info" id="edit_button">
+            <div id="editinfo">
+                <br><input type="text" placeholder="username"><br>
+                <input type="text" placeholder="password"><br>
+                <br><input type="submit" value="Submit Changes">
+            </div>
+        </article>
+        <aside class="latestcomments">
+            <h3>latest comments</h3>
+            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremlorem </p>
+                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremlorem </p>
+                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremlorem </p>
+                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremlorem </p>
+                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremlorem </p>
+                                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremlorem </p>
+                                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremlorem </p>
+                                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremlorem </p>
+                                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremlorem </p>
+        </aside>
+    </main>
+    <br>
+    <h1 class="favouritelists">Favourite List :</h1>
+        <header class="titles">
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+        </header>
+</body>
+</html>
