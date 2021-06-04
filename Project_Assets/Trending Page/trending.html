@@ -1,182 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trending</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      @media only screen and (min-width: 820px) {
-        .cont{
-        margin-top:40px ;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trending</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media only screen and (min-width: 820px) {
+      .cont {
+        margin-top: 40px;
         width: 92%;
-        /* background-color: #141616; */
         padding: 10px;
         margin-right: auto;
         margin-left: auto;
         display: flex;
         overflow: auto;
-        }
-        img{
-            width: 140px;
-            height: 80px;
-        }
-        header a{
-            font-size: 28px;
-        }
-        .side-list{
-        width: 20%;
-        float: right;
-        }
       }
-      @media only screen and (max-width: 821px) {
-        header img,
-        .card img {
-        display: none;
-        }
-        form{
-            display: none;
-        }
-        header ul{
-            margin: auto;
-        }
-        header a{
-            font-size: 32px;
-        }
-        .side-list{
-          width: 80%;
-        }
-      }
-      body {
-        background-image: url(./bg_img_3.jpg);
-        background-repeat: no-repeat;
-        object-fit: cover;
-      }
-      header {
-        width: 100%;
+
+      img {
+        width: 140px;
         height: 80px;
-        /* background-image: linear-gradient(#21ccb5, rgb(168, 187, 187)); */
-        /* background-color: #212121; */
-        border-radius: 5px;
-        box-shadow: 2px 2px 4px #383333;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        position: relative;
-        margin-top:0px ;
+      }
+
+      header a {
+        font-size: 28px;
+      }
+
+      .side-list {
+        width: 30%;
+        float: right;
+      }
+      .side-list ol{
+      margin: 10px 0px 20px 35px;
+      line-height: 30px;
+      font-size: 20px;
+      list-style: none;
+    }
+    }
+
+    @media only screen and (max-width: 821px) {
+
+      header img {
+        display: none;
+      }
+
+      header form {
+        display: none;
       }
 
       header ul {
-        display: flex;
-        list-style: none;
+        margin: auto;
       }
 
-      header li,
       header a {
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        padding: 20px 10px 20px 10px;
-        text-decoration: none;
-        color: #65649c;
+        font-size: 32px;
       }
 
-      header input {
-        width: 180px;
-        height: 35px;
-        border-radius: 15px;
-        margin-top: 22.5px;
-        margin-right: 10px;
-      }
-
-      header button {
-        width: 20px;
-        height: 20px;
-        margin-left: -45px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        border: 0px;
-        background-color: white;
-      }
-      header form {
-        margin-right: 10px;
-      }
-      .back-color{
-        position: absolute;
-        background-color: #383333;
-        opacity: 0.6;
-        width: 100%;
-        height: 80px;
-        margin-top:0px ;
-      }
-      .cont{
-        position: relative;
-        margin-top:40px ;
-        width: 92%;
-        /* background-color: #141616; */
-        padding: 10px;
-        margin-right: auto;
-        margin-left: auto;
-        overflow: auto;
-      }
-      .cards{
+      .side-list {
         width: 90%;
+        margin: auto;
+        text-align: center;
       }
-      .card{
-        min-width: 400px;
-        width: 90%;
-        height: 200px;
-        background-color: #5c9191;
-        padding: 10px;
-        margin: 20px;
+      .side-list h4{
+        font-size: 40px;
       }
-      .side-list{
-        min-width: 250px;
-        height: 800px;
-        background-color: #2f7552;
-        padding: 10px;
-        margin: 20px;
-      }
-      
+      .side-list ol{
+      /* margin: 10px 0px 20px 55px; */
+      text-align: center;
+      list-style: none;
+      line-height: 50px;
+      font-size: 30px;
+    }
+    }
 
-    </style>
-  </head>
-  <body> 
-    <div class="back-color"></div>
-    <header>
-      <img src="./header_logo.png" alt="website-logo" />
-      <ul>
-        <li><a class="text-decoration-none" href=""> Home</a></li>
-        <li><a class="text-decoration-none" href=""> Trending</a></li>
-        <li><a class="text-decoration-none" href=""> Profile</a></li>
-        <li><a class="text-decoration-none" href=""> Categories</a></li>
-      </ul>
+    body {
+      background-image: url(./bg_img_3.jpg);
+      background-repeat: no-repeat;
+      object-fit: cover;
+    }
 
-      <form action="#" method="POST">
-        <div class="search-box">
-          <input type="text" placeholder="  search by name" />
-          <button class="btn">></button>
-        
-      </form>
-    </header>
+    header {
+      width: 100%;
+      height: 80px;
+      /* background-image: linear-gradient(#21ccb5, rgb(168, 187, 187)); */
+      /* background-color: #212121; */
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px #383333;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      position: relative;
+      margin-top: 0px;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header li,
+    header a {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      padding: 20px 10px 20px 10px;
+      text-decoration: none;
+      color: #65649c;
+    }
+
+    header input {
+      width: 180px;
+      height: 35px;
+      border-radius: 15px;
+      margin-top: 22.5px;
+      margin-right: 10px;
+    }
+
+    header button {
+      width: 20px;
+      height: 20px;
+      margin-left: -45px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 0px;
+      background-color: white;
+    }
+
+    header form {
+      margin-right: 10px;
+    }
+
+    .back-color {
+      position: absolute;
+      background-color: #383333;
+      opacity: 0.6;
+      width: 100%;
+      height: 80px;
+      margin-top: 0px;
+    }
+
+    .cont {
+      margin-right: auto;
+      margin-left: auto;
+      overflow: auto;
+    }
+
+    .cards {
+      width: 90%;
+    }
+
+    .card {
+      min-width: 400px;
+      width: 95%;
+      min-height: 200px;
+      background-color: #5c9191;
+      padding: 10px 10px 0px 10px;
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      opacity: 0.93;
+      animation: bounce 1.5s infinite;
+    }
+    .card:hover{
+      opacity: 2;
+      animation: none;
+      transform: scale(1.05);
+
+    }
+    .card img {
+      width: 150px;
+      height: 160px;
+    }
+
+    .side-list {
+      min-width: 300px;
+      height: fit-content;
+      background-color: #2f7552;
+      padding: 20px;
+      margin: 20px;
+      opacity: 0.93;
+    }
+    .side-list:hover{
+      opacity: 1;
+      transform: scale(1.07);
+    }
+    .details{
+      width: 80%;
+      margin: 10px;
+    }
+    @keyframes bounce {
+      0% {
+        tranform: translate(0, 5px);
+      }
+      50% {
+        transform: translate(0, 5px);
+      }
+  </style>
+</head>
+
+<body>
+  <div class="back-color"></div>
+  <header>
+    <img src="./header_logo.png" alt="website-logo" />
+    <ul>
+      <li><a class="text-decoration-none" href=""> Home</a></li>
+      <li><a class="text-decoration-none" href=""> Trending</a></li>
+      <li><a class="text-decoration-none" href=""> Profile</a></li>
+      <li><a class="text-decoration-none" href=""> Categories</a></li>
+    </ul>
+
+    <form action="#" method="POST">
+      <div class="search-box">
+        <input type="text" placeholder="  search by name" />
+        <button class="btn">></button>
+
+    </form>
+  </header>
   </div>
-<div class="cont">
+  <div class="cont">
     <div class="cards">
-        <div class="card">
-          <img src="" alt="an image" width="100px" height="100px">
-          <div class="details">
-            <h3>anime name</h3>
-            <p>desc</p>
-          </div>
-          </div>
+      <div class="card">
+        <div><img src="./test_logo.png" alt="an image"></div>
+        <div class="details" style="display: inline;">
+          <h3 >Attack On titan</h3>
+          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
         </div>
       </div>
-          <div class="side-list">
-          <div class="list">z</div>
+      <div class="card">
+        <div><img src="./test_logo.png" alt="an image"></div>
+        <div class="details" style="display: inline;">
+          <h3 >Attack On titan</h3>
+          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
         </div>
+      </div>
+      <div class="card">
+        <div><img src="./test_logo.png" alt="an image"></div>
+        <div class="details" style="display: inline;">
+          <h3 >Attack On titan</h3>
+          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="./test_logo.png" alt="an image"></div>
+        <div class="details" style="display: inline;">
+          <h3 >Attack On titan</h3>
+          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
+        </div>
+      </div>
     </div>
-  </body>
+    <div class="side-list">
+      <div class="list">
+        <h4>hottest rigth now</h4>
+        <ol>
+          <li>1. <a href="/">attack on titan 2</a></li>
+          <li>2. <a href="/">attack on titan 2</a></li>
+          <li>3. <a href="/">attack on titan 2</a></li>
+          <li>4. <a href="/">attack on titan 2</a></li>
+          <li>5. <a href="/">attack on titan 2</a></li>
+        </ol>
+        <h4>latest animes</h4>
+        <ol>
+          <li>1. <a href="/">attack on titan 2</a></li>
+          <li>2. <a href="/">attack on titan 2</a></li>
+          <li>3. <a href="/">attack on titan 2</a></li>
+          <li>4. <a href="/">attack on titan 2</a></li>
+          <li>5. <a href="/">attack on titan 2</a></li>
+        </ol>
+        <h4>our Top list</h4>
+        <ol>
+          <li>1. <a href="/">attack on titan 2</a></li>
+          <li>2. <a href="/">attack on titan 2</a></li>
+          <li>3. <a href="/">attack on titan 2</a></li>
+          <li>4. <a href="/">attack on titan 2</a></li>
+          <li>5. <a href="/">attack on titan 2</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
