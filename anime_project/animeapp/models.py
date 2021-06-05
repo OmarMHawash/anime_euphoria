@@ -1,7 +1,11 @@
 from django.db import models
 # from django.db.models.enums import Choices
 from user_app.models import Users
+<<<<<<< HEAD
 from enum import Enum 
+=======
+from enum import Enum
+>>>>>>> 31f7d412b4e0c9d68bb76cdbce235e18ed1d0a90
 
 class AnimeManager(models.Manager):
     def basic_anime(self, postData):
@@ -53,7 +57,11 @@ class Animes(models.Model):
     fav_list=models.ManyToManyField(Users,related_name="liked_a")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+<<<<<<< HEAD
     objects = AnimeManager()
+=======
+    objects =AnimeManager()  
+>>>>>>> 31f7d412b4e0c9d68bb76cdbce235e18ed1d0a90
 
 class Comments(models.Model):
     comment=models.TextField()
@@ -61,6 +69,7 @@ class Comments(models.Model):
     anime_id=models.ForeignKey(Animes, related_name="a_comment",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects =AnimeManager()  
 
 class Category(models.Model):
     Action = 'AC'
@@ -91,3 +100,4 @@ class Category(models.Model):
     genre = models.ForeignKey(Animes,related_name="anime_category",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects =AnimeManager()  
