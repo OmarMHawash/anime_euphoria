@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+    $(document).ready(function(){
+        $("#edit_button").click(function(){
+        $("#editinfo").toggle();
+        });
+    });
+    </script>
+    <style>
+        * {
+        margin: 0 auto;
+        padding: 0;
+        color:grey;
+        text-align: center;
+        }
+        
+        @media only screen and (min-width: 1020px) {
+            .titles{
+                margin: 50px 10%;
+                display: flex;
+            }
+            .titles > article {
+                justify-content: space-around;
+                margin: 5% auto auto auto; 
+                border-radius: 5px;
+                height: 300px;
+            }
+            main{
+            display: flex;
+        }
+            
+        }
+        body{
+            background-color: #212121;
+            background-image: url(./bg_img_3.jpg);
+        }
+
+        @media only screen and (min-width: 820px) {
+        .cont{
+        margin-top:40px ;
+        width: 92%;
+        /* background-color: #141616; */
+        padding: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        overflow: auto;
+        }
+        .header img{
+            width: 140px;
+            height: 80px;
+        }
+        .header a{
+            font-size: 28px;
+        }
+        .side-list{
+        width: 20%;
+        float: right;
+        }
+      }
+      @media only screen and (max-width: 821px) {
+        .header img{
+        display: none;
+        }
+        form{
+            display: none;
+        }
+        .header ul{
+            margin: auto;
+        }
+        .header a{
+            font-size: 32px;
+        }
+        .side-list{
+          width: 80%;
+        }
+      }
+      body {
+        background-image: url(./bg_img_3.jpg);
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      .header {
+        width: 100%;
+        height: 80px;
+        /* background-image: linear-gradient(#21ccb5, rgb(168, 187, 187)); */
+        /* background-color: #212121; */
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px #383333;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        position: relative;
+        margin-top:0px ;
+      }
+
+      .header ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .header li,
+      .header a {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        padding: 20px 10px 20px 10px;
+        text-decoration: none;
+        color: #65649c;
+      }
+
+      .header input {
+        width: 180px;
+        height: 35px;
+        border-radius: 15px;
+        margin-top: 22.5px;
+        margin-right: 10px;
+      }
+
+      .header button {
+        width: 20px;
+        height: 20px;
+        margin-left: -45px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 0px;
+        /* background-color: white; */
+      }
+      .header form {
+        margin-right: 10px;
+      }
+      .back-color{
+        position: absolute;
+        background-color: #383333;
+        opacity: 0.6;
+        width: 100%;
+        height: 80px;
+        margin-top:0px ;
+      }
+        /* main{
+            display: flex;
+        } */
+        .profilepic{
+            margin: auto auto;
+            border: 1px solid grey;
+            height: 100px;
+            width: 100px;
+        }
+        #editinfo{
+            display: none;
+        }
+        .usernameinfo{
+            width: 30%;
+            min-width: 100px;
+            text-align: center;
+            height: max-content;
+        }
+        .latestcomments{
+            border:1px solid grey ;
+            border-radius: 10px;
+            max-width: 60%;
+            min-width: 30%;
+            max-height: 10cm;
+            padding: 15px;
+            overflow-y: scroll;
+        }
+        .latestcomments>h3{
+            text-align: center;
+        }
+        input{
+            text-align: center;
+        }
+        #editinfo >input{
+            text-align: center;
+            width: 150px;
+        }
+        .titles{
+                margin: 50px 10%;
+                /* display: flex; */
+            }
+            .titles > article {
+                justify-content: space-around;
+                margin: 5% auto auto auto; 
+                border-radius: 5px;
+                height: 300px;
+            }
+            .titles > article > img{
+                justify-content: space-around;
+                margin: 0 auto;
+                border-radius: 5px;
+                border: 1px solid black;
+                height: 300px;
+            }
+            .favouritelists{
+            text-align: left;
+            margin-left: 10%;
+        }
+        /*FOOTER*/
+
+        footer {
+        background: #16222A;
+        background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+        background: rgba(0, 0, 0, 0.678);
+        color: white;
+        }
+
+        footer a {
+        color: #fff;
+        font-size: 14px;
+        transition-duration: 0.2s;
+        }
+
+        footer a:hover {
+        color: #FA944B;
+        text-decoration: none;
+        }
+
+        .copy {
+        font-size: 12px;
+        padding: 10px;
+        border-top: 1px solid #FFFFFF;
+        }
+
+        .footer-middle {
+        padding-top: 2em;
+        color: white;
+        }
+
+
+        /*SOCİAL İCONS*/
+
+        /* footer social icons */
+
+        ul.social-network {
+        list-style: none;
+        display: inline;
+        margin-left: 0 !important;
+        padding: 0;
+        }
+
+        ul.social-network li {
+        display: inline;
+        margin: 0 5px;
+        }
+
+
+        /* footer social icons */
+
+        .social-network a.icoFacebook:hover {
+        background-color: #3B5998;
+        }
+
+        .social-network a.icoLinkedin:hover {
+        background-color: #007bb7;
+        }
+
+        .social-network a.icoFacebook:hover i,
+        .social-network a.icoLinkedin:hover i {
+        color: #fff;
+        }
+
+        .social-network a.socialIcon:hover,
+        .socialHoverClass {
+        color: #44BCDD;
+        }
+
+        .social-circle li a {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto 0 auto;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        }
+
+        .social-circle li i {
+        margin: 0;
+        line-height: 30px;
+        text-align: center;
+        }
+
+        .social-circle li a:hover i,
+        .triggeredHover {
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms--transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        transition: all 0.2s;
+        }
+
+        .social-circle i {
+        color: #595959;
+        -webkit-transition: all 0.8s;
+        -moz-transition: all 0.8s;
+        -o-transition: all 0.8s;
+        -ms-transition: all 0.8s;
+        transition: all 0.8s;
+        }
+
+        .social-network a {
+        background-color: #F9F9F9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="back-color"></div>
+        <header class="header">
+            <img src="./header_logo.png" alt="website-logo">
+            <ul>
+                <li><a href=""> Home</a></li>
+                <li><a href=""> Trending</a></li>
+                <li><a href=""> Profile</a></li>
+                <li><a href=""> Categories</a></li>
+            </ul>
+            <form action="#" method="POST" >
+                <div class="search-box">
+                    <input type="text" placeholder="search by name" />
+                    <button class="btn">></button>
+                </div>
+            </form>
+        </header><br><br>
+    <main>
+        <article class="usernameinfo">
+            <div class="profilepic">
+            </div>
+            <p>username</p><br><br>
+            <input type="submit" value="Edit info" id="edit_button">
+            <div id="editinfo">
+                <br><input type="text" placeholder="username"><br>
+                <input type="text" placeholder="password"><br>
+                <br><input type="submit" value="Submit Changes">
+            </div>
+        </article><br>
+        <aside class="latestcomments">
+            <h3>latest comments</h3>
+            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremlorem </p>
+                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremlorem </p>
+                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremlorem </p>
+                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremlorem </p>
+                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremlorem </p>
+                                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremlorem </p>
+                                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremlorem </p>
+                                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremlorem </p>
+                                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremlorem </p>
+        </aside>
+    </main>
+    <br>
+    <h1 class="favouritelists">Favourite List :</h1>
+        <header class="titles">
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+        </header>
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Follow Us</h4>
+                    <ul class="social-network social-circle">
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+                </div>
+            </div><br><br><br>
+            <div class="row">
+                <div class="col-md-12 copy">
+                    <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </footer>
+</body>
+</html>
