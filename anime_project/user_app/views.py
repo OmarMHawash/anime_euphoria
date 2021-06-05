@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from .models import *
 from django.contrib import messages
 
+<<<<<<< HEAD
 def loginRender(request):
     if 'user' in request.session:
         return redirect('/')
@@ -32,3 +33,7 @@ def register(request):
     return redirect('/')
     
     
+=======
+def index(request):
+    return HttpResponse("this is users page")
+>>>>>>> 180869607eb0ff99c76da7715aa65a9c3c8e8ac8
