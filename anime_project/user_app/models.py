@@ -5,9 +5,9 @@ class UserManager(models.Manager):
     def basic_reg(self, postData):
         errors = {}
         if len(postData['username']) <3:
-            errors["last_name"] = "last name should be at least 3 characters"
-        if len(postData['passwd']) < 8 :
-            errors["passwd"] = "password should be at least 8 characters"
+            errors["username"] = "last name should be at least 3 characters"
+        if len(postData['password']) < 8 :
+            errors["password"] = "password should be at least 8 characters"
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         if not EMAIL_REGEX.match(postData['email']):           
             errors['email'] = "Invalid email address!"
