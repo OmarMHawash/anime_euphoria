@@ -1,7 +1,7 @@
 from django.db import models
 # from django.db.models.enums import Choices
 from user_app.models import Users
-from enum import Enum
+from enum import Enum 
 
 class AnimeManager(models.Manager):
     def basic_anime(self, postData):
@@ -30,17 +30,30 @@ class AnimeManager(models.Manager):
         return errors
 
 class Animes(models.Model):
+    class Rating(models.IntegerChoices):
+        ZERO = 0
+        ONE = 1
+        TWO = 2
+        THREE = 3
+        FOUR = 4 
+        FIVE = 5
+        SIX = 6
+        SEVEN = 7
+        EIGHT = 8
+        NINE = 9 
+        TEN = 10 
     title=models.CharField(max_length=45)
     desc=models.TextField()
     release_date=models.DateField()
     pic_url=models.URLField()
     trailer_url=models.URLField()
     pic_bg=models.URLField()
+    rating=models.IntegerField(default=Rating.ZERO, null=True,choices=Rating.choices)
     user_id_a=models.ForeignKey(Users,related_name="u_anime",on_delete=models.CASCADE)
     fav_list=models.ManyToManyField(Users,related_name="liked_a")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects =AnimeManager()  
+    objects = AnimeManager()
 
 class Comments(models.Model):
     comment=models.TextField()
@@ -48,7 +61,6 @@ class Comments(models.Model):
     anime_id=models.ForeignKey(Animes, related_name="a_comment",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects =AnimeManager()  
 
 class Category(models.Model):
     Action = 'AC'
@@ -79,4 +91,3 @@ class Category(models.Model):
     genre = models.ForeignKey(Animes,related_name="anime_category",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects =AnimeManager()  

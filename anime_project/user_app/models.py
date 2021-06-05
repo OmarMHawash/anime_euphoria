@@ -26,7 +26,7 @@ class Users(models.Model):
     username = models.CharField(max_length=45)
     email = models.CharField(max_length=45)
     password = models.CharField(max_length=45)
-    p_pic=models.URLField(max_length=255)
+    p_pic=models.URLField(max_length=255,default="https://c1.klipartz.com/pngpicture/554/218/sticker-png-circle-silhouette-user-profile-user-interface-black-head-blackandwhite-logo.png")
     role=models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
