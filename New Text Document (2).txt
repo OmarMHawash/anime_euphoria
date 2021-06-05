@@ -1,0 +1,45 @@
+class AnimeManager(models.Manager):
+    def basic_anime(self, postData):
+        errors = {}
+        if len(postData['title']) <3:
+            errors["title"] = "Anime name should be at least 3 characters"
+        if len(postData['desc']) < 125 :
+            errors["desc"] = "password should be at least 125 characters"        
+        if postData['rating'] >= 0 and postData['rating'] <= 10 :
+            errors["rating"] = "Rating should be between 0 and 10"
+        if len(postData['pic_url']) > 5 :
+            errors["pic_url"] = "You should enter url "
+        if len(postData['trailer_url']) > 5 :
+            errors["trailer_url"] = "You should enter trailer url "    
+        if len(postData['pic_bg']) > 5 :
+            errors["pic_bg"] = "You should enter background url "  
+    def basic_comments(self, postData):
+        errors = {}
+        if len(postData['comment']) < 1:
+            errors["email"] = " email should be at least 1 characters"
+        return errors
+    def basic_category(self, postData):
+        errors = {}
+        if len(postData['category']) != "":
+            errors["category"] = "category not in list"
+        return errors
+class BlogManager(models.Manager):
+    def basic_reg(self, postData):
+        errors = {}
+        if len(postData['username']) <3:
+            errors["last_name"] = "last name should be at least 3 characters"
+        if len(postData['passwd']) < 8 :
+            errors["passwd"] = "password should be at least 8 characters"
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        if not EMAIL_REGEX.match(postData['email']):           
+            errors['email'] = "Invalid email address!"
+        if len(postData['email']) < 8:
+            errors["email"] = "email should be at least 8 characters"
+        return errors
+    def basic_log(self, postData):
+        errors = {}
+        if len(postData['email']) < 8:
+            errors["email"] = " email should be at least 8 characters"
+        if len(postData['passwd']) < 8:
+            errors["passwd"] = "password should be at least 8 characters"
+        return errors
