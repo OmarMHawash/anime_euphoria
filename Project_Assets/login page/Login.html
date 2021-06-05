@@ -143,7 +143,7 @@
   </head>
   <body>
     <header class="d-flex justify-content-end">
-      <form action="">
+      <form action="/main">
         <button type="button" class="btn btn-outline-success">
           Join as a Guest
         </button>
@@ -155,12 +155,13 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-              <form onsubmit="event.preventDefault()" class="box">
+              <form action="/login" method="POST" onsubmit="event.preventDefault()" class="box">
+               {% csrf_token %}
                 <h1>Login</h1>
                 <p class="text-muted">Please enter your login and password!</p>
-                <input type="text" name="" placeholder="Username" />
-                <input type="password" name="" placeholder="Password" />
-                <input type="submit" name="" value="Login" href="#" />
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" value="Login"/>
               </form>
             </div>
           </div>
@@ -170,13 +171,14 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-              <form onsubmit="event.preventDefault()" class="box">
+              <form action="/register" method="POST" onsubmit="event.preventDefault()" class="box">
+                {% csrf_token %}
                 <h1>Register</h1>
                 <p class="text-muted">Please enter your account info</p>
-                <input type="text" name="" placeholder="Email" />
-                <input type="text" name="" placeholder="Username" />
-                <input type="password" name="" placeholder="Password" />
-                <input type="submit" name="" value="Register" href="#" />
+                <input type="text" name="email" placeholder="Email" />
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="submit" value="Register"/>
               </form>
             </div>
           </div>
