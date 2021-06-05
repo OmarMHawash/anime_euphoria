@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <script>
+    $(document).ready(function(){
+        $("#edit_button").click(function(){
+        $("#editinfo").toggle();
+        });
+    });
+    </script>
+</head>
+<body>
+    <img class="bg-img" src="{% static 'images/bg_img_3.jpg' %}" />
+
+    <div class="back-color"></div>
+        <header class="header">
+            <img src="/animeapp/static/images/header_logo.png" alt="website-logo" />
+            <ul>
+                    <li><a href="/main/welcome"> Home</a></li>
+                    <li><a href="/main/trending"> Trending</a></li>
+                    <li><a href="/main/profile"> Profile</a></li>
+                    <li class="dropdown"><a id="cathover" class="text-decoration-none" href=""> Categories</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div></li>
+                </ul>
+                <a href="/main/logout" style="color: red;">LOGOUT</a>
+            <form action="#" method="POST" >
+                <div class="search-box">
+                    <input type="text" placeholder="search by name" />
+                    <button class="btn">></button>
+                </div>
+            </form>
+        </header><br><br>
+    <main>
+        <article class="usernameinfo">
+            <div class="profilepic">
+            </div>
+            <p>username</p><br><br>
+            <input type="submit" value="Edit info" id="edit_button">
+            <div id="editinfo">
+                <br><input type="text" placeholder="username"><br>
+                <input type="text" placeholder="password"><br>
+                <br><input type="submit" value="Submit Changes">
+            </div>
+        </article><br>
+        <aside class="latestcomments">
+            <h3>latest comments</h3>
+            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremloremloremloremloremloremloremlorem
+                loremloremloremloremloremlorem </p>
+                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                    loremloremloremloremloremlorem </p>
+                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                        loremloremloremloremloremlorem </p>
+                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                            loremloremloremloremloremlorem </p>
+                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                loremloremloremloremloremlorem </p>
+                                <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremloremloremloremloremloremloremlorem
+                                    loremloremloremloremloremlorem </p>
+                                    <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremloremloremloremloremloremloremlorem
+                                        loremloremloremloremloremlorem </p>
+                                        <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremloremloremloremloremloremloremlorem
+                                            loremloremloremloremloremlorem </p>
+                                            <p>loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremloremloremloremloremloremloremlorem
+                                                loremloremloremloremloremlorem </p>
+        </aside>
+    </main>
+    <br>
+    <h1 class="favouritelists">Favourite List :</h1>
+        <header class="titles">
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+        </header>
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Follow Us</h4>
+                    <ul class="social-network social-circle">
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+                </div>
+            </div><br><br><br>
+            <div class="row">
+                <div class="col-md-12 copy">
+                    <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </footer>
+</body>
+</html>

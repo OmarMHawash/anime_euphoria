@@ -16,9 +16,18 @@
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
   <body>
+
     <img class="bg-img" src="{% static 'images/login_background.jpg' %}" />
-        <header class="d-flex justify-content-end">
-      <form action="/">
+        <header class="d-flex justify-content-between">
+          <ul></ul>
+          {% if messages %}
+          <ul class="messages" style="color: red;">    
+            {% for message in messages %}    
+                <li>{{ message }}</li>    
+            {% endfor %}
+          </ul>
+          {% endif %}
+      <form action="/main/welcome">
         <input type="submit" value="Join as a Guest" class="btn btn-outline-success">
       </form>
     </header>
@@ -27,14 +36,15 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-              <form action="/profile/login" method="POST" class="box">
+              <form action="/login" method="POST" class="box">
                 {% csrf_token %}
                 <h1>Login</h1>
                 <p class="text-muted">Please enter your login and password!</p>
-                <input type="text" name="username" placeholder="Username" />
+                <input type="text" name="email" placeholder="email" />
                 <input type="password" name="password" placeholder="Password" />
                 <input type="submit" value="Login"/>
               </form>
+              
             </div>
           </div>
         </div>
@@ -43,7 +53,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card">
-              <form action="/profile/register" method="POST" class="box">
+              <form action="/register" method="POST" class="box">
                 {% csrf_token %}
                 <h1>Register</h1>
                 <p class="text-muted">Please enter your account info</p>
@@ -52,19 +62,12 @@
                 <input type="password" name="password" placeholder="Password" />
                 <input type="submit" value="Register"/>
               </form>
-              {% if messages %}
-      <ul class="messages">    
-    {% for message in messages %}    
-        <li>{{ message }}</li>    
-    {% endfor %}
-      </ul>
-{% endif %}
             </div>
           </div>
         </div>
       </div>
     </container>
-
+    
     <footer></footer>
   </body>
 </html>

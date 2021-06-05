@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime</title>
-    <style>
         * {
             padding: 0;
             margin: 0;
@@ -218,71 +210,66 @@
             color:rgba(224, 191, 147, 0.828) ;
             text-shadow:1px 1px black;
         }
-    </style>
-</head>
-
-<body>
-    <div class="back-color"></div>
-    <header>
-      <img src="./header_logo.png" alt="website-logo" />
-      <ul>
-        <li><a class="text-decoration-none" href=""> Home</a></li>
-        <li><a class="text-decoration-none" href=""> Trending</a></li>
-        <li><a class="text-decoration-none" href=""> Profile</a></li>
-        <li><a class="text-decoration-none" href=""> Categories</a></li>
-      </ul>
-
-      <form action="#" method="POST">
-        <div class="search-box">
-          <input type="text" placeholder="  search by name" />
-          <button class="btn">></button>
+        .category {
+          background-image: linear-gradient(#21ccb5, rgb(168, 187, 187));
+          color: white;
+          font-size: small;
+          display: none;
+          border-radius: 10px;
+        }
+        .category > ul {
+          list-style: none;
+        }
+        .category > ul > li {
+          font-size: small;
+          height: 10px;
+        }
+        .category > ul > li > a {
+          font-size: small;
+          height: 10px;
+        }
+        .dropbtn {
+          background-color: #04aa6d;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
         
-      </form>
-    </header>
-
-    <section>
-        <div class="container">
-            <iframe width="962" height="541" src="https://www.youtube.com/embed/7aMOurgDB-o"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </div>
-    </section>
-    <article>
-    <div class="poster">
-        <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images/artworkimages/medium/3/tokyo-ghoul-guerrero-leonore.jpg"
-            alt="poster-img">
-            <h3>Tokyo Ghoul</h3>
-    </div>
-    <div class="anime_info">
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
         
-    </div>
-    <div class="desc">
-        <div class="info">
-        <span>Category : Action / Drama / Horror / Psychological / Seinen / Supernatural</span><br>
-        <span>Release Date:  July 4 2014 </span>
-        <span>Rating: 3.5</span>
-    </div>
-        <h3>The Plot</h3>
-        <p>The story follows Ken Kaneki, a college student who barely survives a deadly encounter with Rize Kamishiro,
-            his date who reveals herself as a ghoul. He is taken to the hospital in critical condition. After
-            recovering, Kaneki discovers that he underwent a surgery that transformed him into a half-ghoul. This was
-            accomplished because some of Rize's organs were transferred into his body, and now, like normal ghouls, he
-            must consume human flesh to survive. The ghouls who manage the coffee shop "Anteiku" take him in and teach
-            him to deal with his new life as a half-ghoul. Some of his daily struggles include fitting into the ghoul
-            society, as well as keeping his identity hidden from his human companions, especially from his best friend
-            Hideyoshi Nagachika.</p>
-    </div>
-</article>
-<div class="discussion">
-    <h3>Discussion</h3>
-    <span>username</span>
-    <p> The spot was perfect for camouflage. At least that's what she thought when she picked the spot. She couldn't imagine that anyone would ever be able to see her in these surroundings. So there she sat, confident that she was hidden from the world and safe from danger. Unfortunately, she had not anticipated that others may be looking upon her from other angles, and now they were stealthily descending toward her hiding spot.</p>
-    <span>username</span>
-    <p> According to the caption on the bronze marker placed by the Multnomah Chapter of the Daughters of the American Revolution on May 12, 1939, “College Hall (is) the oldest building in continuous use for Educational purposes west of the Rocky Mountains. Here were educated men and women who have won recognition throughout the world in all the learned professions.”</p>
-    <span>username</span>
-    <p> The computer wouldn't start. She banged on the side and tried again. Nothing. She lifted it up and dropped it to the table. Still nothing. She banged her closed fist against the top. It was at this moment she saw the irony of trying to fix the machine with violence.</p>
-</div>
-</body>
-
-</html>
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #ddd;
+        }
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+          background-color: #3e8e41;
+        }
+        .bg-img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }

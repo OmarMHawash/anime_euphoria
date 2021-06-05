@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/anime_pg.css' %}"> 
+</head>
+
+<body>
+    <img class="bg-img" src="{% static 'images/bg_img_3.jpg' %}" />
+
+    <div class="back-color"></div>
+    <header>
+        <img src="/animeapp/static/images/header_logo.png" alt="website-logo" />
+        <ul>
+        <li><a class="text-decoration-none" href="/main/welcome"> Home</a></li>
+        <li><a class="text-decoration-none" href="/main/trending"> Trending</a></li>
+        <li><a class="text-decoration-none" href="/main/profile"> Profile</a></li>
+        <li class="dropdown"><a id="cathover" class="text-decoration-none" href=""> Categories</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div></li>
+    
+      </ul>
+      <a href="/main/logout" style="color: red;">LOGOUT</a>
+      <form action="#" method="POST">
+        <div class="search-box">
+          <input type="text" placeholder="  search by name" />
+          <button class="btn">></button>
+        
+      </form>
+    </header>
+
+    <section>
+        <div class="container">
+            <iframe width="962" height="541" src="https://www.youtube.com/embed/7aMOurgDB-o"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+    <article>
+    <div class="poster">
+        <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images/artworkimages/medium/3/tokyo-ghoul-guerrero-leonore.jpg"
+            alt="poster-img">
+            <h3>Tokyo Ghoul</h3>
+    </div>
+    <div class="anime_info">
+        
+    </div>
+    <div class="desc">
+        <div class="info">
+        <span>Category : Action / Drama / Horror / Psychological / Seinen / Supernatural</span><br>
+        <span>Release Date:  July 4 2014 </span>
+        <span>Rating: 3.5</span>
+    </div>
+        <h3>The Plot</h3>
+        <p>The story follows Ken Kaneki, a college student who barely survives a deadly encounter with Rize Kamishiro,
+            his date who reveals herself as a ghoul. He is taken to the hospital in critical condition. After
+            recovering, Kaneki discovers that he underwent a surgery that transformed him into a half-ghoul. This was
+            accomplished because some of Rize's organs were transferred into his body, and now, like normal ghouls, he
+            must consume human flesh to survive. The ghouls who manage the coffee shop "Anteiku" take him in and teach
+            him to deal with his new life as a half-ghoul. Some of his daily struggles include fitting into the ghoul
+            society, as well as keeping his identity hidden from his human companions, especially from his best friend
+            Hideyoshi Nagachika.</p>
+    </div>
+</article>
+<div class="discussion">
+    <h3>Discussion</h3>
+    <span>username</span>
+    <p> The spot was perfect for camouflage. At least that's what she thought when she picked the spot. She couldn't imagine that anyone would ever be able to see her in these surroundings. So there she sat, confident that she was hidden from the world and safe from danger. Unfortunately, she had not anticipated that others may be looking upon her from other angles, and now they were stealthily descending toward her hiding spot.</p>
+    <span>username</span>
+    <p> According to the caption on the bronze marker placed by the Multnomah Chapter of the Daughters of the American Revolution on May 12, 1939, “College Hall (is) the oldest building in continuous use for Educational purposes west of the Rocky Mountains. Here were educated men and women who have won recognition throughout the world in all the learned professions.”</p>
+    <span>username</span>
+    <p> The computer wouldn't start. She banged on the side and tried again. Nothing. She lifted it up and dropped it to the table. Still nothing. She banged her closed fist against the top. It was at this moment she saw the irony of trying to fix the machine with violence.</p>
+</div>
+</body>
+
+</html>

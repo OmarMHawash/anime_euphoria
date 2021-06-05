@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">    
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <title>Home</title>
+        </head>
+        <body>
+            <img class="bg-img" src="{% static 'images/bg_img_3.jpg' %}" />
+
+            <header class="header">
+                <a href="/main/showanime">go anime</a>
+                <img src="/animeapp/static/images/header_logo.png" alt="website-logo" />
+                <ul>
+                    <li><a href="/main/welcome"> Home</a></li>
+                    <li><a href="/main/trending"> Trending</a></li>
+                    <li><a href="/main/profile"> Profile</a></li>
+                    <li class="dropdown"><a id="cathover" class="text-decoration-none" href=""> Categories</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div></li>
+                </ul>
+            <a href="/main/logout" style="color: red;">LOGOUT</a>   
+            <form action="#" method="POST" >
+                <div class="search-box">
+                    <input type="text" placeholder="  search by name" />
+                    <button class="btn">></button>
+                </div>
+            </form>
+            </header>
+
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="https://wearestillcool.com/wp-content/uploads/2020/10/blackclover2-978x600.jpg"  >
+                <div class="text">Caption Text</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="https://wallpapercave.com/wp/wp5116274.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="https://wallpapercave.com/wp/PPhKgzo.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="https://images5.alphacoders.com/605/605794.jpg" style="width:100%">
+                    <div class="text">Caption Four</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+            <header class="titles">
+                <article>
+                    <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                    <p><a href="">anime name</a></p>
+                </article>
+                <article>
+                    <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                    <p><a href="">anime name</a></p>
+                </article>
+                <article>
+                    <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                    <p><a href="">anime name</a></p>
+                </article>
+                <article>
+                    <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                    <p><a href="">anime name</a></p>
+                </article>
+        </header>
+        <header class="titles">
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+            <article>
+                <img src="https://cdn.myanimelist.net/images/manga/3/183001l.webp" alt="">
+                <p><a href="">anime name</a></p>
+            </article>
+        </header>
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Follow Us</h4><br>
+                    <ul class="social-network social-circle">
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+                </div>
+            </div><br><br><br>
+            <div class="row">
+                <div class="col-md-12 copy">
+                    <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </footer>
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            }
+            </script>
+            
+        </body>
+    </html> 
