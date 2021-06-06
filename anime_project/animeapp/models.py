@@ -39,6 +39,7 @@ class AnimeManager(models.Manager):
         return errors
 
 class Animes(models.Model):
+
     class Rating(models.IntegerChoices):
         ZERO = 0
         ONE = 1
