@@ -28,6 +28,15 @@ class AnimeManager(models.Manager):
         if len(postData['category']) != "":
             errors["category"] = "category not in list"
         return errors
+    def basic_update(self, postData):
+        errors = {}
+        if len(postData['usernameu']) < 2:
+            errors["usernameu"] = " username should be at least 2 characters"
+        if len(postData['passwordu']) < 8:
+            errors["passwordu"] = "password should be at least 8 characters"
+        if len(postData['url']) < 8:
+            errors["url"] = "url not accepted"
+        return errors
 
 class Animes(models.Model):
     class Rating(models.IntegerChoices):

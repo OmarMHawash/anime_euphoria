@@ -19,12 +19,22 @@ class UserManager(models.Manager):
             errors["email"] = " email should be at least 8 characters"
         if len(postData['password']) < 8:
             errors["password"] = "password should be at least 8 characters"
-    
-        
         return errors
     def basic_pass(self,postData):
         errors = {}
         errors["password"] = "pass or email don't match"
+        return errors
+    def loggedInCheck(self,postData):
+        errors = {}
+        errors["profile"] = "you must be logged in to view profile!"
+        return errors
+    def commentInCheck(self,postData):
+        errors = {}
+        errors["profile"] = "you must be logged in to add comment!"
+        return errors
+    def likeInCheck(self,postData):
+        errors = {}
+        errors["profile"] = "you must be logged in to add like!"
         return errors
 class Users(models.Model):
     username = models.CharField(max_length=45)
@@ -35,3 +45,4 @@ class Users(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+    

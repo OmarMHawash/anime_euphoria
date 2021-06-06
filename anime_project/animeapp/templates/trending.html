@@ -18,83 +18,53 @@
 
   <div class="back-color"></div>
   <header>
-    <img src="/animeapp/static/images/header_logo.png" alt="website-logo" />
+    <img src="https://i.ibb.co/HYgRrcm/header-logo.png" alt="website-logo" />
     <ul>
       <li><a class="text-decoration-none" href="/main/welcome"> Home</a></li>
       <li><a class="text-decoration-none" href="/main/trending"> Trending</a></li>
       <li><a class="text-decoration-none" href="/main/profile"> Profile</a></li>
-      <li class="dropdown"><a id="cathover" class="text-decoration-none" href=""> Categories</a>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div></li>
+
 </ul>
-<a href="/main/logout" style="color: red;">LOGOUT</a>
+
     <form action="#" method="POST">
+      <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
       <div class="search-box">
         <input type="text" placeholder="  search by name" />
-        <button class="btn">></button>
-
+        <button class="btn">></button></div>
     </form>
   </header>
-  </div>
   <div class="cont">
     <div class="cards">
-      <div class="card">
-        <div><img src="./test_logo.png" alt="an image"></div>
-        <div class="details" style="display: inline;">
-          <h3 >Attack On titan</h3>
-          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
+      {% for i in last_commented %}
+        <div class="card">
+            <div><img src="{{i.anime_id.pic_url}}" alt="an image"></div>
+                <div class="details" style="display: inline;">
+                  <h3><a href="/main/anime/{{i.anime_id.id}}"> {{i.anime_id.title}}</a></h3>
+                  <p>{{i.comment}}</p>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <div><img src="./test_logo.png" alt="an image"></div>
-        <div class="details" style="display: inline;">
-          <h3 >Attack On titan</h3>
-          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
-        </div>
-      </div>
-      <div class="card">
-        <div><img src="./test_logo.png" alt="an image"></div>
-        <div class="details" style="display: inline;">
-          <h3 >Attack On titan</h3>
-          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
-        </div>
-      </div>
-      <div class="card">
-        <div><img src="./test_logo.png" alt="an image"></div>
-        <div class="details" style="display: inline;">
-          <h3 >Attack On titan</h3>
-          <p>When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the human</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
     <div class="side-list">
       <div class="list">
         <h4>hottest rigth now</h4>
         <ol>
-          <li>1. <a href="/">attack on titan 2</a></li>
-          <li>2. <a href="/">attack on titan 2</a></li>
-          <li>3. <a href="/">attack on titan 2</a></li>
-          <li>4. <a href="/">attack on titan 2</a></li>
-          <li>5. <a href="/">attack on titan 2</a></li>
+          {% for i in most_liked %}
+            <li><a href="/main/anime/{{i.id}}">{{i.title}}</a></li>
+            {% endfor %}
         </ol>
         <h4>latest animes</h4>
         <ol>
-          <li>1. <a href="/">attack on titan 2</a></li>
-          <li>2. <a href="/">attack on titan 2</a></li>
-          <li>3. <a href="/">attack on titan 2</a></li>
-          <li>4. <a href="/">attack on titan 2</a></li>
-          <li>5. <a href="/">attack on titan 2</a></li>
+          {% for i in latest_animes %}
+          <li><a href="/main/anime/{{i.id}}">{{i.title}}</a></li>
+          {% endfor %}
         </ol>
         <h4>our Top list</h4>
         <ol>
-          <li>1. <a href="/">attack on titan 2</a></li>
-          <li>2. <a href="/">attack on titan 2</a></li>
-          <li>3. <a href="/">attack on titan 2</a></li>
-          <li>4. <a href="/">attack on titan 2</a></li>
-          <li>5. <a href="/">attack on titan 2</a></li>
+            {% for i in hottest_animes %}
+            <li><a href="/main/anime/{{i.id}}">{{i.title}}</a></li>
+            {% endfor %}
+          </ol>
         </ol>
       </div>
     </div>
