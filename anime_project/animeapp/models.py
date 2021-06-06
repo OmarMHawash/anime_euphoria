@@ -66,6 +66,9 @@ class Animes(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = AnimeManager()
 
+    def __str__(self):
+        return self.title
+
 class Comments(models.Model):
     comment=models.TextField()
     user_id= models.ForeignKey(Users, related_name="u_comment",on_delete=models.CASCADE)

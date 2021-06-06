@@ -12,6 +12,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     {% load static %}
   <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <script>
@@ -35,16 +39,19 @@
 
 </ul>
 
-    <form action="#" method="POST">
-        {% if request.session.user_id %}
-        <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
-        {% else %}
-        <a class="login"  href="/" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">login</a>
-         {% endif %}
-        <div class="search-box">
-        <input type="text" placeholder="  search by name" />
-        <button class="btn">></button></div>
-    </form>
+<form action="/main/searchh" method="POST">
+    {% csrf_token %}
+    {% if request.session.user_id %}
+    <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
+    {% else %}
+    <a class="login"  href="/" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">login</a>
+     {% endif %}
+  <div class="search-box">
+
+    <input id="tags" name="search" type="text" placeholder=" search by name" />
+    <button  class="btn">></button></div>
+
+</form>
   </header><br><br>
     <main>
         <article class="usernameinfo">
@@ -110,4 +117,12 @@
             </div>
         </footer>
 </body>
+<script>
+    $(function () {
+                $("#tags").autocomplete({
+                    source: "{% url 'autocomplete' %}",
+                    minLength: 1
+                });
+            });
+</script>
 </html>

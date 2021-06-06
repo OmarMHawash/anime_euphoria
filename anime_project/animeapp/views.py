@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from animeapp.models import Animes
 from django.shortcuts import render,redirect,HttpResponse
 from .models import *
@@ -27,6 +28,7 @@ def anime_pg(request,id):
         'all_comments':Comments.objects.filter(anime_id=id)
     }
     request.session['anime_id']=id
+
     return render(request,"anime_pg.html",context)
 
 def addComment(request):
@@ -132,3 +134,19 @@ def logout(request):
             for key, value in errors.items():
                 messages.error(request, value)
     return redirect('/')
+
+def autocomplete(request):
+    if 'term' in request.GET:
+        qs = Animes.objects.filter(title__istartswith=request.GET.get('term'))
+        titles=list()
+        for anime in qs:
+            titles.append(anime.title)
+        return JsonResponse(titles,safe=False)
+    return redirect('/main/welcome')
+
+def search(request):
+    if request.POST["search"]:
+        anime=Animes.objects.filter(title=request.POST["search"])
+        animeid=anime[0].id
+        print(request.POST["search"])
+        return redirect(f"/main/anime/{animeid}")

@@ -11,5 +11,8 @@ urlpatterns = [
     path('add_like',views.addLike),
     path('delete_like',views.deleteLike),
     path('update/<int:id>',views.update),
+    path('search',views.autocomplete, name='autocomplete'),
+    path('searchh',views.search),
+
 
 ]
