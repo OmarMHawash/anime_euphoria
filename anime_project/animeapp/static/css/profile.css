@@ -8,7 +8,6 @@ text-align: center;
 
 @media only screen and (min-width: 1020px) {
     .titles{
-        margin: 50px 10%;
         display: flex;
     }
     .titles > article {
@@ -155,15 +154,20 @@ input{
     width: 150px;
 }
 .titles{
-        margin: 50px 10%;
+        margin-left: 50px;
         position: absolute;
-        /* display: flex; */
-    }
+        width: 90%;
+        overflow: auto;
+          }
     .titles > article {
         justify-content: space-around;
-        margin: 5% auto auto auto; 
+        margin: 5% 10px auto auto; 
         border-radius: 5px;
         height: 300px;
+    }
+    .titles > article > p{
+      position: absolute;
+      width: 20%;
     }
     .titles > article > img{
         justify-content: space-around;
@@ -171,11 +175,14 @@ input{
         border-radius: 5px;
         border: 1px solid black;
         height: 300px;
+        float: right;
     }
     .favouritelists{
     text-align: left;
     margin-left: 10%;
     position: absolute;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 /*FOOTER*/
 
