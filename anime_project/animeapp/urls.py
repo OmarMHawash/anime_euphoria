@@ -6,6 +6,7 @@ urlpatterns = [
     path('logout', views.logout),
     path('trending',views.trending_pg),
     path('profile/<int:id>',views.profile_pg),
+    path('profile/',views.profile_pg_main),
     path('anime/<int:id>',views.anime_pg),
     path('add_comment',views.addComment),
     path('add_like',views.addLike),
