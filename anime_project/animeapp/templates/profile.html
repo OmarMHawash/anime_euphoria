@@ -45,10 +45,11 @@
     <main>
         <article class="usernameinfo">
             <div class="profilepic">
-                <img src="{{user.p_pic}}" style="width: 100px; height: 100px;" alt="{{user.username}}">
+                <img src="{{user.p_pic}}" style="width: 100px; height: 120px;" alt="{{user.username}}">
             </div>
             <p>{{user.username}}</p><br><br>
-            <input type="submit" value="Edit info" id="edit_button">
+            {% if user.id == request.session.user_id %}
+            <input type="submit" value="Edit info" name="editinfo" id="edit_button">
             <div id="editinfo">
                 <form action="/main/update/{{user.id}}" method="POST">
                     {% csrf_token %}
@@ -57,6 +58,14 @@
                     <input type="text" name="url" placeholder="profile picture"><br>
                     <br><input type="submit" value="Submit Changes">
                 </form>
+                {% endif %}
+                {% if messages %}
+                <ul class="messages" style="color: red;">    
+                {% for message in messages %}    
+                        <li>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </article><br>
         <aside class="latestcomments">

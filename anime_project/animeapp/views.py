@@ -99,17 +99,20 @@ def update(request,id):
         if len(errors) > 0:
             for key, value in errors.items():
                 messages.error(request, value)
+        if len(request.POST["usernameu"]) > 2 :
             user.username=request.POST["usernameu"]
     if request.POST["passwordu"]:
         if len(errors) > 0:
             for key, value in errors.items():
                 messages.error(request, value)
-        user.password=bcrypt.hashpw(request.POST["passwordu"].encode(), bcrypt.gensalt()).decode()
+        if len(request.POST["passwordu"]) > 7 :
+            user.password=bcrypt.hashpw(request.POST["passwordu"].encode(), bcrypt.gensalt()).decode()
     if request.POST["url"]:
         if len(errors) > 0:
             for key, value in errors.items():
                 messages.error(request, value)
-        user.p_pic=request.POST["url"]
+        if len(request.POST["url"]) > 5 :
+            user.username=request.POST["url"]
     user.save()
     return redirect('/main/profile')
 
@@ -122,6 +125,10 @@ def profile_pg(request,id):
         }
         return render(request,"profile.html",context)
 def logout(request):
+    errors = Animes.objects.basic_delete(request.POST)
     if 'user' in request.session:
         request.session.clear()
+    if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
     return redirect('/')
