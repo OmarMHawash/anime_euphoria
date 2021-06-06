@@ -46,19 +46,21 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
+        
     </section>
+    
     <article>
     <div class="poster">
         <img src="{{this_anime.pic_url}}" alt="poster-img">
-            <h3>{{this_anime.title}}</h3>
-        <form action="/main/add_like" method="POST">
-        {% csrf_token %}
-        <input type="submit" style="width: 120px; height: 30px; background-color: rgb(255, 208, 0); color: white;" value="add to favoriets">
-        </form>
-        <form action="/main/delete_like" method="POST">
-            {% csrf_token %}
-            <input type="submit" style="width: 120px; height: 30px; background-color: rgb(255, 0, 0); color: white;" value="remove favoriet">
-            </form>
+            <h3>{{this_anime.title}}</h3><form action="/main/add_like" method="POST">
+                {% csrf_token %}
+                <input type="submit" style="width: 120px; height: 30px; background-color: rgb(255, 208, 0); color: white;" value="add to favoriets">
+                </form>
+                <form action="/main/delete_like" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" style="width: 120px; height: 30px; background-color: rgb(255, 0, 0); color: white;" value="remove favoriet">
+                    </form>
+        
     </div>
     <div class="anime_info">
         
