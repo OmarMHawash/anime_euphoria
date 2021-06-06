@@ -31,13 +31,17 @@
     <ul>
       <li><a class="text-decoration-none" href="/main/welcome"> Home</a></li>
       <li><a class="text-decoration-none" href="/main/trending"> Trending</a></li>
-      <li><a class="text-decoration-none" href="/main/profile"> Profile</a></li>
+      <li><a class="text-decoration-none" href="/main/profile/{{request.session.user_id}}"> Profile</a></li>
 
 </ul>
 
     <form action="#" method="POST">
-      <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
-      <div class="search-box">
+        {% if request.session.user_id %}
+        <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
+        {% else %}
+        <a class="login"  href="/" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">login</a>
+         {% endif %}
+        <div class="search-box">
         <input type="text" placeholder="  search by name" />
         <button class="btn">></button></div>
     </form>
@@ -45,10 +49,11 @@
     <main>
         <article class="usernameinfo">
             <div class="profilepic">
-                <img src="{{user.p_pic}}" style="width: 100px; height: 100px;" alt="{{user.username}}">
+                <img src="{{user.p_pic}}" style="width: 100px; height: 120px;" alt="{{user.username}}">
             </div>
             <p>{{user.username}}</p><br><br>
-            <input type="submit" value="Edit info" id="edit_button">
+            {% if user.id == request.session.user_id %}
+            <input type="submit" value="Edit info" name="editinfo" id="edit_button">
             <div id="editinfo">
                 <form action="/main/update/{{user.id}}" method="POST">
                     {% csrf_token %}
@@ -57,6 +62,14 @@
                     <input type="text" name="url" placeholder="profile picture"><br>
                     <br><input type="submit" value="Submit Changes">
                 </form>
+                {% endif %}
+                {% if messages %}
+                <ul class="messages" style="color: red;">    
+                {% for message in messages %}    
+                        <li>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </article><br>
         <aside class="latestcomments">
@@ -67,8 +80,8 @@
         </aside>
     </main>
     <br>
-    <h1 class="favouritelists">Favourite List :</h1>
-        <header class="titles">nnn
+    <h1 class="favouritelists">Favourite List :</h1><br>
+        <header class="titles">
             {% for i in liked %}
             <article>
                 <img src="{{i.pic_url}}" alt="anime photo">

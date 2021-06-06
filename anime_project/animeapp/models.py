@@ -37,7 +37,9 @@ class AnimeManager(models.Manager):
         if len(postData['url']) < 8:
             errors["url"] = "url not accepted"
         return errors
-
+    def basic_delete(self,postdata):
+        errors = ""
+        return errors
 class Animes(models.Model):
 
     class Rating(models.IntegerChoices):

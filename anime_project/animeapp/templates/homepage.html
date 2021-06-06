@@ -6,14 +6,13 @@
         <link rel="stylesheet" href="{% static 'css/homepage.css' %}">    
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <title>Home</title>
         </head>
         <body>
-        <img class="bg-img" src="{% static 'images/bg_img_3.jpg' %}" />
 
   <div class="back-color"></div>
   <header class="header">
@@ -21,40 +20,44 @@
     <ul>
       <li><a class="text-decoration-none" href="/main/welcome"> Home</a></li>
       <li><a class="text-decoration-none" href="/main/trending"> Trending</a></li>
-      <li><a class="text-decoration-none" href="/main/profile/{{requset.session.user_id}}"> Profile</a></li>
-</ul>
+      <li><a class="text-decoration-none" href="/main/profile/{{request.session.user_id}}"> Profile</a></li>
+    </ul>
 
     <form action="#" method="POST">
-      <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
+        {% if request.session.user_id %}
+        <a class="logout"  href="/main/logout" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">logout</a>
+        {% else %}
+        <a class="login"  href="/" style="color: red; font-size: 20px;margin-left: 100px; background-color: rgb(24, 16, 32); height: 20px; border-radius: 30px; opacity: 1;">login</a>
+         {% endif %}
       <div class="search-box">
         <input type="text" placeholder="  search by name" />
         <button class="btn">></button></div>
     </form>
   </header>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                <div class="numbertext">1 / 4</div>
-                <img src="{{background1.pic_bg}}"  >
-                <div class="text">Caption Text</div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 4</div>
-                    <img src="{{background2.pic_bg}}" style="width:100%">
-                    <div class="text">Caption Two</div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 4</div>
-                    <img src="{{background3.pic_bg}}" style="width:100%">
-                    <div class="text">Caption Three</div>
-                </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">4 / 4</div>
-                    <img src="{{background4.pic_bg}}" style="width:100%">
-                    <div class="text">Caption Four</div>
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <a href="/main/anime/{{background1.id}}"><img src="{{background1.pic_bg}}" style="width:100%"></a>
+        <div class="text"><p>{{background1.title}}</p></div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <a href="/main/anime/{{background2.id}}"><img src="{{background2.pic_bg}}" style="width:100%"></a>
+        <div class="text"><p>{{background2.title}}</p></div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <a href="/main/anime/{{background3.id}}"><img src="{{background3.pic_bg}}" style="width:100%"></a>
+        <div class="text"><p>{{background3.title}}</p></div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <a href="/main/anime/{{background4.id}}"><img src="{{background4.pic_bg}}" style="width:100%"></a>
+        <div class="text"><p>{{background4.title}}</p></div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
             <br>
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span> 
