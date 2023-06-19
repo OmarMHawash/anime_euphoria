@@ -54,9 +54,9 @@ Checkout The Demo: [Live Demo](https://memberpress.com/wp-content/uploads/2020/1
 git clone https://github.com/OmarMHawash/HollyLand
 ```
 
-2. Import the project in your IDE
+2. run the `activate` script in your venv folder
 
-3. Run the app
+3. Run the app with `py manage.py runserver`
 
 <h2 id="features">🤯 Features & Functionalities </h2>
 
